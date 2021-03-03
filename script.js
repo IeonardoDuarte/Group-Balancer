@@ -20,6 +20,7 @@ window.onload = function () {
     const inputNome = document.querySelector('.input-nome');
     const inputPeso = document.querySelector('.input-peso');
     const inputQtd = document.querySelector('.input-qtd-por-grupo');
+    const contadorItens = document.querySelector('.contador');
     const tabela = document.querySelector('.tabela-nomes');
 
     let pessoas = [];
@@ -43,6 +44,7 @@ window.onload = function () {
 
     btnAdicionar.addEventListener('click', () => {
         pessoas.push(new Pessoa(inputNome.value, inputPeso.value));
+        contadorItens.innerHTML = `Quantidade de itens: ${pessoas.length}`;
         atualizaLista(pessoas);
     });
 
@@ -82,10 +84,4 @@ window.onload = function () {
         balanceado = [];
         tabela.innerHTML = '';
     });
-
-    // TODO - FAZER UM CONTADOR DE PESSOAS NA LISTA
-    // TODO - Arrumar o bug de adicionar um item sem conteúdo
-    // TODO - Arrumar bug de balancear lista com números impares ou grupos incompletos
-    // TODO - Deixar mais bonito
-
 };
