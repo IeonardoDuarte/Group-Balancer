@@ -1,0 +1,40 @@
+body {
+    font-family: 'DotGothic16', sans-serif;
+    color: #58319d;
+    background-color: #9e8dd0;
+}
+
+.titulo {
+    text-shadow: 1px 1px gray,
+        -1px -1px #444;
+    font-family: 'DotGothic16', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem;
+}
+
+.cabecalho {
+    width: 100vw;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.grupo-balancear {
+    margin: 0 2rem;
+}
+
+.tabela {
+    width: 100vw;
+    padding: 0 40vw;
+}
+
+.tabela-nomes tr {
+    color: #f3f3f3;
+    background-color: #2f2c48;
+    border-color: #11101a;
+}
+
+.peso {
+    text-align: center;
+}
