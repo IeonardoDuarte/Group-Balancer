@@ -72,7 +72,7 @@ window.onload = function () {
         for (let i = 0; i < balanceado.length; i++) {
             if (i % qtdPorGp == 0) {
                 grupo++;
-                tabela.innerHTML += `<tr><td colspan="2" style="text-align: center">Grupo ${grupo}</td></tr>`;
+                tabela.innerHTML += `<tr class="numero-grupos"><td colspan="2" style="text-align: center">Grupo ${grupo}</td></tr>`;
             }
             escreveTabela(balanceado[i]);
 
