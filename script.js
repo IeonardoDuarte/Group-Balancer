@@ -85,6 +85,9 @@ window.onload = function () {
         pessoas = [];
         balanceado = [];
         tabela.innerHTML = '';
+        inputNome.value = '';
+        inputPeso.value = '';
+        inputQtd.value = '';
         contadorItens.innerHTML = `Quantidade de itens: ${pessoas.length}`;
     });
 };
