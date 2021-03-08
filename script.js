@@ -43,9 +43,11 @@ window.onload = function () {
     };
 
     btnAdicionar.addEventListener('click', () => {
-        pessoas.push(new Pessoa(inputNome.value, inputPeso.value));
-        contadorItens.innerHTML = `Quantidade de itens: ${pessoas.length}`;
-        atualizaLista(pessoas);
+        if (inputNome.value != '' && inputPeso.value != '') {
+            pessoas.push(new Pessoa(inputNome.value, inputPeso.value));
+            contadorItens.innerHTML = `Quantidade de itens: ${pessoas.length}`;
+            atualizaLista(pessoas);
+        }
     });
 
     btnBalancear.addEventListener('click', () => {
