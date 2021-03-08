@@ -63,21 +63,35 @@ window.onload = function () {
             return 0;
         });
 
-        for (let i = 0; i < pessoas.length; i += 2) {
-            balanceado.push(pessoas[i]);
-            balanceado.push(pessoas[(pessoas.length - i - 1)]);
-        };
-        tabela.innerHTML = "";
+        let pessoasInv = [];
+        pessoas.forEach(i => {
+            pessoasInv.push(i)
+        });
+        pessoasInv.reverse();
 
-        console.log(qtdPorGp);
+        for (let i = 0; i < Math.floor(pessoas.length / 2); i++) {
+            balanceado.push(pessoasInv[i]);
+            balanceado.push(pessoas[i]);
+        }
+        if (pessoas.length % 2 != 0) {
+            balanceado.push(pessoas[Math.floor(pessoas.length / 2)]);
+        }
+        balanceado.reverse();
+
+        console.log(pessoas);
+        console.log(pessoasInv);
+        console.log(balanceado);
+
+
+        tabela.innerHTML = "";
         let grupo = 0;
         for (let i = 0; i < balanceado.length; i++) {
             if (i % qtdPorGp == 0) {
                 grupo++;
                 tabela.innerHTML += `<tr class="numero-grupos"><td colspan="2" style="text-align: center">Grupo ${grupo}</td></tr>`;
             }
-            escreveTabela(balanceado[i]);
 
+            escreveTabela(balanceado[i]);
         }
     });
 
