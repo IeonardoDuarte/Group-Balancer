@@ -4,20 +4,22 @@ body {
     background-color: #9e8dd0;
 }
 
-.titulo {
-    text-shadow: 1px 1px gray,
-        -1px -1px #444;
-    font-family: 'DotGothic16', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    margin: 2rem;
+.img-titulo {
+    margin-bottom: -5rem;
+}
+
+.inputs-group {
+    display: flex;
+    margin: 2rem 0;
 }
 
 .cabecalho {
-    width: 100vw;
+    padding: 3rem;
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    background-color: #000;
+    border: 0.5rem solid #fff;
 }
 
 .grupo-balancear {
@@ -35,6 +37,7 @@ button {
 .contador {
     margin: 0 0 2rem;
     text-align: center;
+    font-weight: bolder;
 }
 
 .tabela {

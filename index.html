@@ -16,21 +16,23 @@
 </head>
 
 <body>
-    <h1 class="titulo">Group Balancer</h1>
-    <header class="cabecalho">
-        <div class="grupo-adicionar">
-            <input type="text" placeholder="NOME DO ITEM" class="input-nome shadow p-3 mb-5 bg-white rounded">
-            <input type="number" placeholder="DIGITE O PESO" class="input-peso shadow p-3 mb-5 bg-white rounded">
-            <button class="adicionar shadow p-3 mb-5 bg-white rounded">ADICIONAR</button>
-        </div>
+    <img src="./images/titulo.png" alt="titulo" class="img-titulo row mx-auto mt-5" />
+    <header class="inputs-group">
+        <div class="cabecalho">
+            <div class="grupo-adicionar">
+                <input type="text" placeholder="NOME DO ITEM" class="inputs input-nome shadow p-3 bg-white rounded">
+                <input type="number" placeholder="DIGITE O PESO" class="inputs input-peso shadow p-3 bg-white rounded">
+                <button class="adicionar shadow p-3 bg-white rounded">ADICIONAR</button>
+            </div>
 
-        <div class="grupo-balancear">
-            <input type="number" placeholder="TAMANHO DO GRUPO"
-                class="input-qtd-por-grupo shadow p-3 mb-5 bg-white rounded">
-            <button class="balancear shadow p-3 mb-5 bg-white rounded">BALANCEAR</button>
-        </div>
+            <div class="grupo-balancear">
+                <input type="number" placeholder="TAMANHO DO GRUPO"
+                    class="inputs input-qtd-por-grupo shadow p-3 bg-white rounded">
+                <button class="balancear shadow p-3 bg-white rounded">BALANCEAR</button>
+            </div>
 
-        <button class="limpar shadow p-3 mb-5 bg-white rounded">LIMPAR</button>
+            <button class="limpar shadow p-3 bg-white rounded">LIMPAR</button>
+        </div>
     </header>
 
     <h2 class="contador">Quantidade de itens: 0</h2>
