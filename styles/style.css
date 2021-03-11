@@ -4,16 +4,16 @@ body {
     background-color: #9e8dd0;
 }
 
-.img-titulo {
+.title-img {
     margin-bottom: -5rem;
 }
 
-.inputs-group {
+.input-group {
     display: flex;
     margin: 2rem 0;
 }
 
-.cabecalho {
+.input-container {
     padding: 3rem;
     margin: 0 auto;
     display: flex;
@@ -22,7 +22,7 @@ body {
     border: 0.5rem solid #fff;
 }
 
-.grupo-balancear {
+.add-group {
     margin: 0 2rem;
 }
 
@@ -34,24 +34,24 @@ button {
     text-justify: auto;
 }
 
-.contador {
+.counter {
     margin: 0 0 2rem;
     text-align: center;
     font-weight: bolder;
 }
 
-.tabela {
+.table-container {
     width: 100vw;
     padding: 0 40vw;
 }
 
-.tabela-nomes tr {
+.name-table tr {
     color: #f3f3f3;
     background-color: #2f2c48;
     border-color: #11101a;
 }
 
-.numero-grupos td {
+.group-number td {
     font-family: 'DotGothic16',
         sans-serif;
     color: #58319d;
@@ -60,6 +60,6 @@ button {
     background-color: #9e8dd0;
 }
 
-.peso {
+.weight {
     text-align: center;
 }

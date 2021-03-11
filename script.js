@@ -1,107 +1,107 @@
 window.onload = function () {
-    class Pessoa {
-        constructor(nome, peso) {
-            this._nome = nome;
-            this._peso = peso;
+    class Person {
+        constructor(name, weight) {
+            this._name = name;
+            this._weight = weight;
         }
 
-        get nome() {
-            return this._nome;
+        get name() {
+            return this._name;
         }
 
-        get peso() {
-            return this._peso;
+        get weight() {
+            return this._weight;
         }
     }
 
-    const btnAdicionar = document.querySelector('.adicionar');
-    const btnBalancear = document.querySelector('.balancear');
-    const btnLimpar = document.querySelector('.limpar');
-    const inputNome = document.querySelector('.input-nome');
-    const inputPeso = document.querySelector('.input-peso');
-    const inputQtd = document.querySelector('.input-qtd-por-grupo');
-    const contadorItens = document.querySelector('.contador');
-    const tabela = document.querySelector('.tabela-nomes');
+    const addButton = document.querySelector('.add-btn');
+    const balanceButton = document.querySelector('.balance-btn');
+    const clearButton = document.querySelector('.clear-btn');
+    const nameInput = document.querySelector('.name-input');
+    const weightInput = document.querySelector('.weight-input');
+    const groupSizeInput = document.querySelector('.group-size-input');
+    const itemCounter = document.querySelector('.counter');
+    const nameTable = document.querySelector('.name-table');
 
-    let pessoas = [];
-    let balanceado = [];
+    let people = [];
+    let balanced = [];
 
-    function escreveTabela(item) {
-        tabela.innerHTML += `
+    function writeInTable(item) {
+        nameTable.innerHTML += `
             <tr>
-                <td class="nome">${item.nome}</td>
-                <td class="peso">${item.peso}</td>
+                <td class="name">${item.name}</td>
+                <td class="weight">${item.weight}</td>
             </tr>`
     }
 
-    function atualizaLista(lista) {
-        tabela.innerHTML = "";
+    function updateList(list) {
+        nameTable.innerHTML = "";
 
-        lista.forEach(pessoa => {
-            escreveTabela(pessoa);
+        list.forEach(person => {
+            writeInTable(person);
         });
     };
 
-    btnAdicionar.addEventListener('click', () => {
-        if (inputNome.value != '' && inputPeso.value != '') {
-            pessoas.push(new Pessoa(inputNome.value, inputPeso.value));
-            contadorItens.innerHTML = `Quantidade de itens: ${pessoas.length}`;
-            atualizaLista(pessoas);
+    addButton.addEventListener('click', () => {
+        if (nameInput.value != '' && weightInput.value != '') {
+            people.push(new Person(nameInput.value, weightInput.value));
+            itemCounter.innerHTML = `Quantity of items: ${people.length}`;
+            updateList(people);
         }
     });
 
-    btnBalancear.addEventListener('click', () => {
-        let qtdPorGp = inputQtd.value;
-        balanceado = [];
+    balanceButton.addEventListener('click', () => {
+        let groupSize = groupSizeInput.value;
+        balanced = [];
 
-        pessoas.sort(function (a, b) {
-            if (parseInt(a.peso) > parseInt(b.peso))
+        people.sort(function (a, b) {
+            if (parseInt(a.weight) > parseInt(b.weight))
                 return 1;
-            if (parseInt(a.peso) < parseInt(b.peso))
+            if (parseInt(a.weight) < parseInt(b.weight))
                 return -1;
 
             return 0;
         });
 
-        let pessoasInv = [];
-        pessoas.forEach(i => {
-            pessoasInv.push(i)
+        let peopleReverse = [];
+        people.forEach(i => {
+            peopleReverse.push(i)
         });
-        pessoasInv.reverse();
+        peopleReverse.reverse();
 
-        for (let i = 0; i < Math.floor(pessoas.length / 2); i++) {
-            balanceado.push(pessoasInv[i]);
-            balanceado.push(pessoas[i]);
+        for (let i = 0; i < Math.floor(people.length / 2); i++) {
+            balanced.push(peopleReverse[i]);
+            balanced.push(people[i]);
         }
-        if (pessoas.length % 2 != 0) {
-            balanceado.push(pessoas[Math.floor(pessoas.length / 2)]);
+        if (people.length % 2 != 0) {
+            balanced.push(people[Math.floor(people.length / 2)]);
         }
-        balanceado.reverse();
+        balanced.reverse();
 
-        console.log(pessoas);
-        console.log(pessoasInv);
-        console.log(balanceado);
+        console.log(people);
+        console.log(peopleReverse);
+        console.log(balanced);
 
 
-        tabela.innerHTML = "";
-        let grupo = 0;
-        for (let i = 0; i < balanceado.length; i++) {
-            if (i % qtdPorGp == 0) {
-                grupo++;
-                tabela.innerHTML += `<tr class="numero-grupos"><td colspan="2" style="text-align: center">Grupo ${grupo}</td></tr>`;
+        nameTable.innerHTML = "";
+        let group = 0;
+        for (let i = 0; i < balanced.length; i++) {
+            if (i % groupSize == 0) {
+                group++;
+                nameTable.innerHTML += `<tr class="group-size"><td colspan="2" style="text-align: center">Group ${group}</td></tr>`;
             }
 
-            escreveTabela(balanceado[i]);
+            writeInTable(balanced[i]);
         }
     });
 
-    btnLimpar.addEventListener('click', () => {
-        pessoas = [];
-        balanceado = [];
-        tabela.innerHTML = '';
-        inputNome.value = '';
-        inputPeso.value = '';
-        inputQtd.value = '';
-        contadorItens.innerHTML = `Quantidade de itens: ${pessoas.length}`;
+    clearButton.addEventListener('click', () => {
+        people = [];
+        balanced = [];
+        nameTable.innerHTML = '';
+        nameInput.value = '';
+        weightInput.value = '';
+        groupSizeInput.value = '';
+        itemCounter.innerHTML = `Quantity of items: ${people.length}`;
     });
 };

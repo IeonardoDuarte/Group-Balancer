@@ -16,29 +16,29 @@
 </head>
 
 <body>
-    <img src="./images/titulo.png" alt="titulo" class="img-titulo row mx-auto mt-5" />
-    <header class="inputs-group">
-        <div class="cabecalho">
-            <div class="grupo-adicionar">
-                <input type="text" placeholder="NOME DO ITEM" class="inputs input-nome shadow p-3 bg-white rounded">
-                <input type="number" placeholder="DIGITE O PESO" class="inputs input-peso shadow p-3 bg-white rounded">
-                <button class="adicionar shadow p-3 bg-white rounded">ADICIONAR</button>
+    <img src="./images/title.png" alt="title" class="title-img row mx-auto mt-5" />
+    <header class="input-group">
+        <div class="input-container">
+            <div class="add-group">
+                <input type="text" placeholder="ITEM NAME" class="inputs name-input shadow p-3 bg-white rounded">
+                <input type="number" placeholder="WEIGTH" class="inputs weight-input shadow p-3 bg-white rounded">
+                <button class="add-btn shadow p-3 bg-white rounded">ADD</button>
             </div>
 
-            <div class="grupo-balancear">
-                <input type="number" placeholder="TAMANHO DO GRUPO"
-                    class="inputs input-qtd-por-grupo shadow p-3 bg-white rounded">
-                <button class="balancear shadow p-3 bg-white rounded">BALANCEAR</button>
+            <div class="balance-group">
+                <input type="number" placeholder="GROUP SIZE"
+                    class="inputs group-size-input shadow p-3 bg-white rounded">
+                <button class="balance-btn shadow p-3 bg-white rounded">BALANCE</button>
             </div>
 
-            <button class="limpar shadow p-3 bg-white rounded">LIMPAR</button>
+            <button class="clear-btn shadow p-3 bg-white rounded">CLEAR</button>
         </div>
     </header>
 
-    <h2 class="contador">Quantidade de itens: 0</h2>
+    <h2 class="counter">Quantity of items: 0</h2>
 
-    <div class="tabela">
-        <table class="tabela-nomes table table-bordered shadow p-3 mb-5 bg-white rounded"></table>
+    <div class="table-container">
+        <table class="name-table table table-bordered shadow p-3 mb-5 bg-white rounded"></table>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
